@@ -1,0 +1,6 @@
+#!/bin/sh
+chown root:root /usr/local/bin/build
+chmod 755 /usr/local/bin/build
+chown root:root /usr/local/bin/buildup
+chmod 755 /usr/local/bin/buildup
+

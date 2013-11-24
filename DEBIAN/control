@@ -1,0 +1,11 @@
+Package: builder
+Version: 1.134
+Section: cws
+Priority: optional
+Architecture: all
+Essential: no
+Depends: dpkg-dev, py-base
+Installed-Size: 1
+Maintainer: Luke Scott [luke at cronworks dot net]
+Provides: builder
+Description: [cws] 

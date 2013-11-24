@@ -1,0 +1,5 @@
+#!/bin/sh
+
+build --package $1
+sudo dpkg -i /home/luke/Reference/Code/Debs/$1.deb
+

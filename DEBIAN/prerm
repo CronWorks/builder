@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -f /usr/local/lib/python2.6/dist-packages/*.pyc
+rm -f /usr/local/lib/python2.7/dist-packages/*.pyc
+
