@@ -16,7 +16,13 @@ class Builder(Job):
     AUTOMATICALLY_WRITE_CONFIG_FILE = True
 
     packageList = []
-    packageFilesToRemoveBeforeBuilding = ['.svn', '.cache', '.project', '.pydevproject', '*.pyc', '.DEBUG']
+    packageFilesToRemoveBeforeBuilding = ['.svn', 
+                                          '.cache', 
+                                          '.project', 
+                                          '.pydevproject', 
+                                          '*.pyc', 
+                                          '.DEBUG',
+                                          'README.md']
 
     def __init__(self):
         super(Builder, self).__init__()
