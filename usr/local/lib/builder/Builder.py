@@ -22,6 +22,7 @@ class Builder(Job):
                                           '.pydevproject', 
                                           '*.pyc', 
                                           '.DEBUG',
+                                          '.git',
                                           'README.md']
 
     def __init__(self):
