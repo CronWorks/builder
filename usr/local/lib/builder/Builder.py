@@ -54,6 +54,12 @@ class Builder(Job):
                             default=None,
                             help="Package name to build",
                             )
+        parser.add_argument('--dry-run',
+                            action='store_true',
+                            required=False,
+                            default=False,
+                            help="Don't build anything, just display what would be done",
+                            )
 
     def addAllPackagesToList(self, force=False):
         packages = listdir(self.config['codeSourceDir'])
@@ -73,10 +79,13 @@ class Builder(Job):
     def buildPackages(self):
         for package in self.packageList:
             package = re.sub('.deb$', '', package)
-            self.out.indent('Building package "%s"' % (package))
-            self.buildPackage(package)
-            self.out.unIndent()
-            self.out.put('done with "%s"' % (package))
+            if self.arguments['dry_run']:
+                self.out.put('Dry-run: would have built package "%s"' % package)
+            else:
+                self.out.indent('Building package "%s"' % (package))
+                self.buildPackage(package)
+                self.out.unIndent()
+                self.out.put('done with "%s"' % (package))
 
     def needToRebuildPackage(self, package):
         debFile = self.getDebFileFullPath(package)
