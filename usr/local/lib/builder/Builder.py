@@ -23,6 +23,7 @@ class Builder(Job):
                                           '*.pyc', 
                                           '.DEBUG',
                                           '.git',
+                                          '.gitignore',
                                           'README.md']
 
     def __init__(self):
