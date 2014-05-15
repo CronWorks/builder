@@ -24,6 +24,7 @@ class Builder(Job):
                                           '.DEBUG',
                                           '.git',
                                           '.gitignore',
+                                          '.settings',
                                           'README.md']
 
     def __init__(self):
