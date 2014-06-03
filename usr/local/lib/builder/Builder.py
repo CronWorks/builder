@@ -64,7 +64,7 @@ class Builder(Job):
                             )
 
     def addAllPackagesToList(self, force=False):
-        packages = listdir(self.config['codeSourceDir'])
+        packages = sorted(listdir(self.config['codeSourceDir']))
         packages.sort()
         for package in packages:
             if force or self.needToRebuildPackage(package):
@@ -86,8 +86,8 @@ class Builder(Job):
             else:
                 self.out.indent('Building package "%s"' % (package))
                 self.buildPackage(package)
+                self.out.put('done')
                 self.out.unIndent()
-                self.out.put('done with "%s"' % (package))
 
     def needToRebuildPackage(self, package):
         debFile = self.getDebFileFullPath(package)
